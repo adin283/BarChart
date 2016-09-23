@@ -14,6 +14,8 @@
 		0CCBB94B1D93CAB100E58729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBB94A1D93CAB100E58729 /* Assets.xcassets */; };
 		0CCBB94E1D93CAB100E58729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBB94C1D93CAB100E58729 /* LaunchScreen.storyboard */; };
 		0CCBB9591D93CAB200E58729 /* BarCharDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB9581D93CAB200E58729 /* BarCharDemoTests.m */; };
+		0CCBB9681D93CF0200E58729 /* BarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB9671D93CF0200E58729 /* BarCell.m */; };
+		DF2E0FB71D94D2B0007976B7 /* BarChartLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2E0FB61D94D2B0007976B7 /* BarChartLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		0CCBB9541D93CAB200E58729 /* BarCharDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarCharDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCBB9581D93CAB200E58729 /* BarCharDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCharDemoTests.m; sourceTree = "<group>"; };
 		0CCBB95A1D93CAB200E58729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CCBB9661D93CF0200E58729 /* BarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCell.h; sourceTree = "<group>"; };
+		0CCBB9671D93CF0200E58729 /* BarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCell.m; sourceTree = "<group>"; };
+		DF2E0FB51D94D2B0007976B7 /* BarChartLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartLayout.h; sourceTree = "<group>"; };
+		DF2E0FB61D94D2B0007976B7 /* BarChartLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,10 @@
 				0CCBB94C1D93CAB100E58729 /* LaunchScreen.storyboard */,
 				0CCBB94F1D93CAB100E58729 /* Info.plist */,
 				0CCBB93E1D93CAB100E58729 /* Supporting Files */,
+				0CCBB9661D93CF0200E58729 /* BarCell.h */,
+				0CCBB9671D93CF0200E58729 /* BarCell.m */,
+				DF2E0FB51D94D2B0007976B7 /* BarChartLayout.h */,
+				DF2E0FB61D94D2B0007976B7 /* BarChartLayout.m */,
 			);
 			path = BarCharDemo;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CCBB9461D93CAB100E58729 /* ViewController.m in Sources */,
+				0CCBB9681D93CF0200E58729 /* BarCell.m in Sources */,
+				DF2E0FB71D94D2B0007976B7 /* BarChartLayout.m in Sources */,
 				0CCBB9431D93CAB100E58729 /* AppDelegate.m in Sources */,
 				0CCBB9401D93CAB100E58729 /* main.m in Sources */,
 			);
@@ -404,6 +416,7 @@
 				0CCBB95F1D93CAB200E58729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CCBB9601D93CAB200E58729 /* Build configuration list for PBXNativeTarget "BarCharDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +425,7 @@
 				0CCBB9621D93CAB200E58729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
