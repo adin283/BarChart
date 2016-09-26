@@ -57,17 +57,18 @@
 
 - (CGSize)collectionViewContentSize
 {
-    return CGSizeMake(self.cellSize.width * self.cellCount, self.cellSize.height);
+    return CGSizeMake(self.cellSize.width * self.cellCount + (self.collectionView.bounds.size.width / 2.0 - self.cellSize.width / 2) * 2, self.cellSize.height);
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     NSMutableArray *theLayoutAttributes = [NSMutableArray array];
     CGFloat maxVisible = self.collectionView.bounds.size.width / self.cellSize.width;
+    
     for (NSInteger i = 0; i < self.cellCount; i++) {
         CGRect itemFrame = [self getRectForItemAtIndex:i];
         
-        if (CGRectIntersectsRect(rect, itemFrame) && i >= floorf(self.offset) && i < ceilf(self.offset + maxVisible)) {
+        if (CGRectIntersectsRect(rect, itemFrame) && i >= floorf(self.offset - maxVisible / 2.0) && i < ceilf(self.offset + maxVisible / 2.0)) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
             UICollectionViewLayoutAttributes *theAttributes = [self layoutAttributesForItemAtIndexPath:indexPath];
             [theLayoutAttributes addObject:theAttributes];
@@ -78,7 +79,7 @@
 
 - (CGRect)getRectForItemAtIndex:(NSInteger)index
 {
-    return CGRectMake(index * self.cellSize.width, 0, self.cellSize.width, self.cellSize.height);
+    return CGRectMake(index * self.cellSize.width + self.collectionView.bounds.size.width / 2.0 - self.cellSize.width / 2.0, 0, self.cellSize.width, self.cellSize.height);
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
