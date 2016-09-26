@@ -41,7 +41,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.barCollectionView.contentInset = UIEdgeInsetsMake(0, ScreenSize.width / 2 - 15, 0, ScreenSize.width / 2 - 15);
+//    self.barCollectionView.contentInset = UIEdgeInsetsMake(0, ScreenSize.width / 2 - 15, 0, ScreenSize.width / 2 - 15);
     NSIndexPath *targetIndexPath = [NSIndexPath indexPathForRow:(_xTitles.count - 1) inSection:0];
     [self.barCollectionView scrollToItemAtIndexPath:targetIndexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
