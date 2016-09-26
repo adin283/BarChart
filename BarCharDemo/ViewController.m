@@ -41,6 +41,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    self.barCollectionView.contentInset = UIEdgeInsetsMake(0, ScreenSize.width / 2 - 15, 0, ScreenSize.width / 2 - 15);
+    NSIndexPath *targetIndexPath = [NSIndexPath indexPathForRow:(_xTitles.count - 1) inSection:0];
+    [self.barCollectionView scrollToItemAtIndexPath:targetIndexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +70,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"click value---%@", self.values[indexPath.row]);
+    [self.barCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    
+    CGFloat collectionViewWidth = CGRectGetWidth(self.barCollectionView.frame);
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CGPoint offset = CGPointMake(cell.center.x - collectionViewWidth / 2, 0);
+    [collectionView setContentOffset:offset animated:YES];
 }
 
 #pragma mark - BarChartLayoutDelegate
@@ -75,7 +84,7 @@
 {
     self.currentCenterIndex = index;
     // 这里 reload 造成死循环了 - -!!!,所以我把样式也写到layout里面了
-//    [self.barCollectionView reloadData];
+    //    [self.barCollectionView reloadData];
 }
 
 @end
